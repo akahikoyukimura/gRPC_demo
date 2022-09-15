@@ -1,0 +1,20 @@
+/*What syntax is used in this file*/
+syntax = "proto3";
+/*Overrides this setting, and everything will
+be generated in individual files.
+*/
+option java_multiple_files = true;
+/*The package we want to use for our generated Java
+classes.
+*/
+package com.grpc.demoGRPC.demoGRPC.grpc.stub;
+message Person {
+  string first_name = 1;
+  string last_name = 2;
+}
+message Greeting {
+  string message = 1;
+}
+service HelloWorldService {
+  rpc sayHello (Person) returns (Greeting);
+}
